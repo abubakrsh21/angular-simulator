@@ -1,0 +1,10 @@
+[33md2fdb13[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/15-homework[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/feature/14-homework[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m, [m[1;32mfeature/14-homework[m[33m)[m сделано
+[33me8fdb82[m add http client provide
+[33m6441f9b[m fix ts root-dir issue
+[33m8be849d[m remove test for modules
+[33m351808d[m turn on zone.js
+[33m10d516e[m install zone js dependency
+[33m75b2bb7[m add zone.js
+[33m046c9c6[m update project icon
+[33me71ac4b[m update favicon icon
+[33mc1e8a14[m Initial commit
