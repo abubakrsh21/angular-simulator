@@ -18,11 +18,11 @@ export class Collection<T> {
     }
 
     removeItem(index: number): void {
-        this.items = this.items.filter((_, i) => i !== index);
+        this.items = this.items.filter((_: T, i: number) => i !== index);
     }
 
     replaceItem(index: number, newItem: T): void {
-        this.items = this.items.map((item, i) =>
+        this.items = this.items.map((item: T, i: number) =>
             i === index ? newItem : item
         );
     }

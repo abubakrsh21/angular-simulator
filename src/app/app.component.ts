@@ -10,38 +10,27 @@ import { Color } from '../enums/Color';
 })
 export class AppComponent {
 
-  companyName: string = 'РУМТИБЕТ'
-
-
-  isPrimaryColor(color: Color): boolean {
-    return (
-      color === Color.RED ||
-      color === Color.GREEN ||
-      color === Color.BLUE
-    );
-  }
-
-  saveLastVisit(): void {
-    localStorage.setItem(
-      'lastVisit',
-      new Date().toString()
-    );
-  }
-
-  saveAmountVisit(): void {
-    const visits = localStorage.getItem('amountVisit');
-
-    const count = visits ? Number(visits) : 0;
-
-    localStorage.setItem(
-      'amountVisit',
-      String(count + 1)
-    );
-  }
-
   constructor() {
     this.saveLastVisit();
 
     this.saveAmountVisit();
   }
+
+  companyName: string = 'РУМТИБЕТ'
+
+
+  isPrimaryColor(color: Color): boolean {
+    const primaryColors = [Color.RED, Color.GREEN, Color.BLUE];
+    return primaryColors.includes(color);
+  }
+
+  saveLastVisit(): void {
+    localStorage.setItem('lastVisit', new Date().toString());
+  }
+
+  saveAmountVisit(): void {
+    const visits = localStorage.getItem('amountVisit');
+    const count = visits !== null ? Number(visits) : 0;
+    localStorage.setItem('amountVisit', String(count + 1));
+  } 
 }

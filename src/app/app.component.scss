@@ -16,6 +16,7 @@
 
 .container {
     width: 1180px;
+    margin: 0 auto;
 }
 
 .logo-wrapper {
@@ -62,15 +63,14 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 1.2%;
+    cursor: pointer;
 }
 
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('/images/main-background.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 100%;
     min-height: 985px;
     z-index: -1;
@@ -80,16 +80,102 @@
 }
 
 .main {
-    display: flex;
-    justify-content: center;
-
     h2 {
         font-weight: 400;
         font-size: 50px;
         line-height: 150%;
         letter-spacing: 2%;
         text-transform: uppercase;
-
         color: #FDFDFD;
     }
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+.search-program {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 24px;
+    background: #FFFFFF33;
+    backdrop-filter: blur(6px);
+    height: 160px;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+
+    label {
+        color: #FDFDFD;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0px;
+        margin: 0 8px;
+    }
+
+    select {
+        width: 270px;
+        height: 52px;
+        border-radius: 8px;
+        padding-right: 40px;
+        padding-left: 16px;
+        gap: 10px;
+        opacity: 1;
+        border-width: 1px;
+        border: 1px solid #E1E3E4;
+        color: #FDFDFD;
+        appearance: none;
+        background-color: transparent;
+        background-image: url('/images/arrow-down-icon.svg');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 20px;
+        cursor: pointer;
+    }
+
+    #select-date {
+        background-image: url('/images/date-icon.svg');
+    }
+
+    select option {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0px;
+    }
+}
+
+.search-program-button {
+    width: 213px;
+    height: 52px;
+    border-radius: 4px;
+    gap: 10px;
+    opacity: 1;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    background: #1A3E3E;
+
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    color: #FDFDFD;
+    border: none;
 }
