@@ -20,7 +20,11 @@ export class AppComponent {
 
 
   isPrimaryColor(color: Color): boolean {
-    const primaryColors = [Color.RED, Color.GREEN, Color.BLUE];
+    const primaryColors: Color[] = [
+      Color.RED,
+      Color.GREEN,
+      Color.BLUE
+    ];
     return primaryColors.includes(color);
   }
 
@@ -30,7 +34,7 @@ export class AppComponent {
 
   saveAmountVisit(): void {
     const visits = localStorage.getItem('amountVisit');
-    const count = visits !== null ? Number(visits) : 0;
+    const count: number = visits !== null ? Number(visits) : 0;
     localStorage.setItem('amountVisit', String(count + 1));
   } 
 }
