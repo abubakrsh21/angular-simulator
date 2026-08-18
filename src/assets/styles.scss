@@ -1,9 +1,14 @@
 @use './fonts';
 @use './normalize';
 
-* {
-    font-family: 'Nunito Sans';
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-;
+* {
+    font-family: 'Nunito Sans';
+    margin: 0;
+    padding: 0;
+}
