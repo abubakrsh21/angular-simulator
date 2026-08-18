@@ -129,7 +129,8 @@
                     <div class="service-list">
                         @for (service of services; track service.id) {
                         <div class="service">
-                            <img src="/images/{{ service.img }}" alt="{{ service.title }}" class="service-img">
+                            <img [src]="'/images/' + service.img + '.svg'" alt="{{ service.title }}"
+                                class="service-img">
                             <div class="service-content">
                                 <h3>{{ service.title }}</h3>
                                 <p>{{ service.description }}</p>
