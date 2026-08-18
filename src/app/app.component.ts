@@ -12,18 +12,24 @@ import { IService } from '../interfaces/IService';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  selectedLocation = '';
-  selectedDate = '';
-  selectedParticipants = '';
-  currentDateTime = new Date();
-  clickCount = 0;
-  isClockVisible = true;
-  liveInputValue = '';
-  isLoading = true;
 
-  locations = ['Крым', 'Алтай', 'Сочи', 'Кавказ'];
-  participantsOptions = ['1 человек', '2 человека', '3 и более'];
+export class AppComponent {
+  selectedLocation: string = '';
+  selectedDate: string = '';
+  selectedParticipants: string = '';
+  currentDateTime: Date = new Date();
+  clickCount: number = 0;
+  isClockVisible: boolean = true;
+  liveInputValue: string = '';
+  isLoading: boolean = true;
+
+  locations: string[] = ['Крым', 'Алтай', 'Сочи', 'Кавказ'];
+
+  participantsOptions: string[] = [
+    '1 человек',
+    '2 человека',
+    '3 и более'
+  ];
 
   get isSearchDisabled(): boolean {
     return !this.selectedLocation || !this.selectedDate || !this.selectedParticipants;
@@ -85,21 +91,22 @@ export class AppComponent {
   services: IService[] = [
     {
       id: 1,
-      img: 'images/experience-gid-icon.svg',
+      img: 'experience-gid-icon.svg',
       title: 'Опытный гид',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     },
     {
       id: 2,
-      img: 'images/security-icon.svg',
+      img: 'security-icon.svg',
       title: 'Безопасный поход',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     },
     {
       id: 3,
-      img: 'images/price-icon.svg',
+      img: 'price-icon.svg',
       title: 'Лояльные цены',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     },
   ]
+
 }

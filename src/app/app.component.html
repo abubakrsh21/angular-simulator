@@ -25,9 +25,11 @@
                     {{ headerWidgetButtonLabel }}
                 </button>
                 <div class="header-widget">
-                    <div class="header-clock" *ngIf="isClockVisible">
+                    @if (isClockVisible) {
+                    <div class="header-clock">
                         {{ currentDateTime | date: 'dd.MM.yyyy HH:mm:ss' }}
                     </div>
+                    }
 
                     <div class="header-counter" *ngIf="!isClockVisible">
                         <button class="header-counter__button" type="button" (click)="decrementClickCount()"
@@ -52,7 +54,9 @@
                     <select class="search-program__select" name="location" id="select-location"
                         [(ngModel)]="selectedLocation">
                         <option value="">Локация для тура</option>
-                        <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+                        @for (location of locations; track location) {
+                        <option [value]="location">{{ location }}</option>
+                        }
                     </select>
                     <label class="search-program__label" for="select-location">выберите из списка</label>
                 </div>
@@ -125,7 +129,7 @@
                     <div class="service-list">
                         @for (service of services; track service.id) {
                         <div class="service">
-                            <img src="{{ service.img }}" alt="{{ service.title }}" class="service-img">
+                            <img src="/images/{{ service.img }}" alt="{{ service.title }}" class="service-img">
                             <div class="service-content">
                                 <h3>{{ service.title }}</h3>
                                 <p>{{ service.description }}</p>
@@ -137,10 +141,10 @@
                 </div>
 
                 <div class="service-pictures">
-                    <img src="images/services-pic1.png" alt="">
-                    <img src="images/services-pic2.png" alt="">
-                    <img src="images/services-pic3.png" alt="">
-                    <img src="images/services-pic4.png" alt="">
+                    <img src="images/services-pic1.png">
+                    <img src="images/services-pic2.png">
+                    <img src="images/services-pic3.png">
+                    <img src="images/services-pic4.png">
                 </div>
             </div>
         </div>
