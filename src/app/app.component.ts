@@ -10,6 +10,7 @@ import { ITravelBlog } from '../interfaces/ITravelBlog';
 import { MessageService } from '../services/message.service';
 import { Message } from '../enums/Message';
 import { LocalStorageService } from '../services/local-storage.service';
+import { IMessage } from '../interfaces/IMessage';
 
 @Component({
   selector: 'app-root',
@@ -61,7 +62,7 @@ export class AppComponent {
   }
 
   constructor(
-    protected messageService: MessageService,
+    private messageService: MessageService,
     private localStorageService: LocalStorageService
   ) {
     this.saveLastVisit();
@@ -96,7 +97,7 @@ export class AppComponent {
   }
 
   saveAmountVisit(): void {
-    const visits =
+    const visits: number | null =
       this.localStorageService.getItem<number>('amountVisit');
 
     const count: number = visits ?? 0;
@@ -112,6 +113,14 @@ export class AppComponent {
       text: text,
       type: type
     });
+  }
+
+  get messages(): IMessage[] {
+    return this.messageService.messages;
+  }
+
+  closeMessage(id: number): void {
+    this.messageService.closeMessage(id);
   }
 
   services: IService[] = [
