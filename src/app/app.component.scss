@@ -28,6 +28,27 @@
     display: block;
 }
 
+h4 {
+    padding-bottom: 8px;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0%;
+
+    color: #F2BE22;
+}
+
+h2 {
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: 0%;
+
+    color: #18121E;
+}
+
 .header {
     height: 120px;
     background-color: #18121E80;
@@ -160,6 +181,70 @@
     line-height: 20px;
     letter-spacing: 1.2%;
     cursor: pointer;
+}
+
+.app-message-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    width: 350px;
+    height: 70px;
+    border-width: 1px;
+    opacity: 1;
+    border-radius: 10px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-color: #0F172AD9;
+    border: 1px solid #FFFFFF;
+    color: #FDFDFD;
+}
+
+.message__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.message__type {
+    font-weight: 716;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+.message__text {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+.message__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;    
 }
 
 .banner {
@@ -500,4 +585,218 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+}
+
+.popular-destinations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 80px;
+    margin-bottom: 95px;
+
+
+
+    .destination-list {
+        margin-top: 50px;
+        display: flex;
+        gap: 20px;
+
+        .destination {
+            position: relative;
+            width: 380px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .destination__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .destination__rating {
+            top: 50px;
+            left: 315px;
+            gap: 10px;
+            opacity: 1;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-bottom: 4px;
+            padding-left: 8px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            background: #FDFDFD66;
+            backdrop-filter: blur(4px);
+
+
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            span {
+                font-family: Nunito Sans;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: 0%;
+                color: #1A3E3E;
+            }
+        }
+
+        .destination__info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 25px 32px;
+
+            background: #FFFFFF33;
+            backdrop-filter: blur(6px);
+            color: #FDFDFD;
+            ;
+
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            z-index: 1;
+        }
+
+        .destination__text {
+            max-width: 70%;
+
+            h3 {
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 24px;
+                line-height: 120%;
+                letter-spacing: 0%;
+            }
+
+            p {
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: 0%;
+            }
+        }
+
+        .destination__price {
+            width: 86px;
+            height: 40px;
+
+            background: #FFFFFF4D;
+            border-radius: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    #rating-button {
+        margin-top: 50px;
+    }
+}
+
+.travel-blogs {
+    background: #F3F5F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 80px;
+    padding-bottom: 95px;
+
+    .blog-list {
+        margin-top: 40px;
+        margin-bottom: 65px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        .blog {
+            display: flex;
+            width: 580px;
+            height: 312px;
+            gap: 20px;
+            opacity: 1;
+            border-radius: 10px;
+            padding: 16px;
+            background: #FDFDFD;
+        }
+
+        .blog__image {
+            width: 230px;
+            height: 280px;
+            opacity: 1;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .blog__content {
+            flex: 1;
+            height: 280px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px 0;
+
+
+            h3 {
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: 0%;
+                margin-bottom: 25px;
+                color: #18121E;
+            }
+
+            p {
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0%;
+                color: #18121E;
+            }
+        }
+
+        .blog__date {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0%;
+                color: #F2BE22;
+            }
+
+            span {
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0%;
+                color: #1A3E3E;
+            }
+        }
+    }
 }
