@@ -1,0 +1,183 @@
+<section class="main">
+    <div class="banner"></div>
+    <div class="main-info container">
+        <h2>
+            Насладись прогулкой в горах <br>
+            с командой единомышленников
+        </h2>
+        <div class="search-program">
+            <div class="search-program__field">
+                <select class="search-program__select" name="location" id="select-location"
+                    [(ngModel)]="selectedLocation">
+                    <option value="">Локация для тура</option>
+                    @for (location of locations; track location) {
+                    <option [value]="location">{{ location }}</option>
+                    }
+                </select>
+                <label class="search-program__label" for="select-location">выберите из списка</label>
+            </div>
+
+            <div class="search-program__field">
+                <input class="search-program__input" type="date" id="select-date" [(ngModel)]="selectedDate"
+                    placeholder="Дата поездки">
+                <label class="search-program__label" for="select-date">укажите дату</label>
+            </div>
+
+            <div class="search-program__field">
+                <select class="search-program__select" name="participants" id="select-participants"
+                    [(ngModel)]="selectedParticipants">
+                    <option value="">Участники</option>
+                    <option *ngFor="let option of participantsOptions" [value]="option">{{ option }}</option>
+                </select>
+                <label class="search-program__label" for="select-participants">выберите из списка</label>
+            </div>
+            <button class="search-program__button" [class.search-program__button--disabled]="isSearchDisabled"
+                [disabled]="isSearchDisabled" id="green-button">Найти программу</button>
+        </div>
+
+        <div class="live-input-demo">
+            <input class="live-input-demo__field" type="text" [(ngModel)]="liveInputValue"
+                placeholder="Введите текст" />
+            <span class="live-input-demo__value">{{ liveInputValue || 'Пусто' }}</span>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-wrapper container">
+        <div class="about-images">
+            <img src="images/mountain.png" alt="about-first" id="about-first">
+            <div class="video-card">
+                <img src="images/forest.png" alt="about-second" id="about-second">
+                <img src="images/play-icon.svg" alt="play-icon" id="play-icon">
+            </div>
+        </div>
+
+        <div class="about-desc">
+            <div class="about-desc__title">
+                <h4>о нашем походе</h4>
+                <h2>Исследуйте все горные массивы <br>
+                    мира вместе с нами</h2>
+            </div>
+            <p>Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий
+                назад.
+                Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых
+                странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской
+                литературе.
+            </p>
+            <button (click)="messageService.showWarn('Программа недоступна')" class="green-button">Программа
+                тура</button>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="title-wrapper container">
+        <div class="services-content">
+            <div class="services-text">
+                <div class="about-desc__title">
+                    <h4>наше предложение</h4>
+                    <h2>Лучшие программы для тебя</h2>
+                </div>
+                <p>Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий
+                    назад.
+                    Ричард МакКлинток, профессор латыни из колледжа.</p>
+
+                <div class="service-list">
+                    @for (service of services; track service.id) {
+                    <div class="service">
+                        <img [src]="'/images/' + service.img + '.svg'" alt="{{ service.title }}" class="service-img">
+                        <div class="service-content">
+                            <h3>{{ service.title }}</h3>
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <button (click)="messageService.showInfo('Стоимость отправлена на почту')"
+                    class="green-button">Стоимость программ</button>
+            </div>
+
+            <div class="service-pictures">
+                <img src="images/services-pic1.png">
+                <img src="images/services-pic2.png">
+                <img src="images/services-pic3.png">
+                <img src="images/services-pic4.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="popular-destinations">
+    <h4>по версии отдыхающих</h4>
+    <h2>Популярные направления</h2>
+    <div class="destination-list container">
+        @for (destination of popularDestinations; track destination.id) {
+        <div class="destination">
+            <img [src]="'/images/destinations/' + destination.img + '.png'" width="380px" height="500px"
+                class="destination__image">
+
+            <div class="destination__rating">
+                <img src="/images/destinations/round-star-icon.svg" alt="">
+                <span>{{ destination.rating | number:'1.1-1' }}</span>
+            </div>
+
+            <div class="destination__info">
+                <div class="destination__text">
+                    <h3>{{ destination.title }}</h3>
+                    <p>{{ destination.description }}</p>
+                </div>
+
+                <div class="destination__price">
+                    <h3>{{ destination.price }} $</h3>
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+    <button (click)="messageService.showSuccess('Направления получены')" class="green-button" id="rating-button">Рейтинг
+        направлений</button>
+</section>
+
+
+<section class="travel-blogs">
+    <h4>делимся впечатлениями</h4>
+    <h2>Блог о путешествиях</h2>
+    <div class="blog-list container">
+        @for (blog of travelBlogs; track blog.id) {
+        <div class="blog">
+            <!-- #1A3E3E ЦВЕТ ДЛЯ ЗАГОЛОВКА  -->
+            <img [src]="'/images/blogs/' + blog.img + '.png'" class="blog__image">
+
+            <div class="blog__content">
+                <div class="blog__info">
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.description }}</p>
+                </div>
+
+                <div class="blog__date">
+                    <p>{{ blog.date | date:'dd/MM/yyyy' }}</p>
+                    <span>читать статью</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <button (click)="messageService.showError('Материалы недоступны')" class="green-button" id="materials-button">Другие
+        материалы</button>
+</section>
+
+<section class="photo-report">
+    <h4>фото-отчет</h4>
+    <h2>Делимся впечатлениями</h2>
+    <div class="report-list container">
+        <img src="/images/photo-report/baloons.png" alt="">
+        <img src="/images/photo-report/map.png" alt="">
+        <img src="/images/photo-report/abu-dhabi.png" alt="">
+        <img src="/images/photo-report/sea-boats.png" alt="">
+        <img src="/images/photo-report/sahara.png" alt="">
+        <img src="/images/photo-report/map2.png" alt="">
+    </div>
+    <button class="green-button">Наш pinterest</button>
+</section>

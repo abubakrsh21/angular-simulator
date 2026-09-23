@@ -1,0 +1,20 @@
+<div class="app-message-stack">
+    @for (message of messages; track message.id) {
+    <ng-container [ngTemplateOutlet]="messageTemplate" [ngTemplateOutletContext]="{ $implicit: message }">
+    </ng-container>
+    }
+</div>
+
+<ng-template #messageTemplate let-message>
+    <div class="message">
+        <img src="/images/message-icon.svg" class="message__icon" />
+
+        <div class="message__content">
+            <p class="message__type">{{ message.type }}</p>
+            <p class="message__text">{{ message.text }}</p>
+        </div>
+
+
+        <img src="/images/delete-message-icon.svg" class="message__close" (click)="closeMessage(message.id)" />
+    </div>
+</ng-template>
