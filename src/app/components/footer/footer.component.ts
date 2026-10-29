@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+
   footerLinks: string[] = [
     'Прогулки в горы летом',
     'Зимние походы в горы',
@@ -22,4 +23,5 @@ export class FooterComponent {
     'Медицинская страховка, гарантии безопасности',
     'Если вы врач — загляните сюда'
   ];
+  
 }

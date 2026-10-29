@@ -1,7 +1,7 @@
 <div class="app-message-stack">
     @for (message of messages; track message.id) {
-    <ng-container [ngTemplateOutlet]="messageTemplate" [ngTemplateOutletContext]="{ $implicit: message }">
-    </ng-container>
+        <ng-container [ngTemplateOutlet]="messageTemplate" [ngTemplateOutletContext]="{ $implicit: message }">
+        </ng-container>
     }
 </div>
 

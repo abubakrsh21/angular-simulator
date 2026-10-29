@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+
   companyName: string = 'РУМТИБЕТ'
   isClockVisible: boolean = true;
   currentDateTime: Date = new Date();
@@ -26,14 +27,6 @@ export class HeaderComponent {
     },
   ];
 
-  toggleHeaderWidget(): void {
-    this.isClockVisible = !this.isClockVisible;
-  }
-
-  get headerWidgetButtonLabel(): string {
-    return this.isClockVisible ? 'Показать счётчик' : 'Показать таймер';
-  }
-
   incrementClickCount(): void {
     this.clickCount += 1;
   }
@@ -49,4 +42,5 @@ export class HeaderComponent {
       this.currentDateTime = new Date();
     }, 1000);
   }
+
 }
