@@ -1,0 +1,63 @@
+.app-message-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    width: 350px;
+    height: 70px;
+    border-width: 1px;
+    opacity: 1;
+    border-radius: 10px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-color: #0F172AD9;
+    border: 1px solid #FFFFFF;
+    color: #FDFDFD;
+}
+
+.message__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.message__type {
+    font-weight: 716;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+.message__text {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+.message__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}

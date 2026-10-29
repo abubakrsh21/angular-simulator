@@ -1,0 +1,132 @@
+.header {
+    height: 120px;
+    background-color: #18121E80;
+    color: #FDFDFD;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2.5px;
+
+    .company-name {
+        width: 132px;
+        height: 22px;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 40%;
+        margin: 10px 3px 0 3px;
+        padding-top: 3px;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    gap: 24px;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    a.active {
+        color: #FDFDFD;
+;
+    }
+}
+
+.header-clock {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FDFDFD;
+    letter-spacing: 0.5px;
+    min-width: 170px;
+    text-align: center;
+}
+
+.header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-widget {
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-toggle {
+    background: transparent;
+    border: 1px solid rgba(253, 253, 253, 0.5);
+    border-radius: 999px;
+    color: #FDFDFD;
+    font-size: 12px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.header-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 110px;
+}
+
+.header-counter__button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background: #FDFDFD;
+    color: #18121E;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.header-counter__button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.header-counter__value {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FDFDFD;
+}
+
+.header-button {
+    background-color: #FDFDFD;
+    width: 158px;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    cursor: pointer;
+}
